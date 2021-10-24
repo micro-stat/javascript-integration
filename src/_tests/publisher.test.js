@@ -10,7 +10,7 @@ test('should initialize new publisher', () => {
 
 test('should expose publish method', () => {
   // Arrange
-  const expectedValue = "Test Statistic = 10";
+  const expectedValue = "Test Statistic = 10 / null";
 
   // Act
   const publisher = new Publisher("Test Statistic");

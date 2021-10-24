@@ -1,12 +1,4 @@
-import { Counter, Connection } from '../index';
-
-describe('Entry', () => {
-  test('should expose expected objects', () => {
-    // Assert
-    expect(Counter).toBeDefined();
-    expect(Connection).toBeDefined();
-  });
-})
+import Connection from '../connection';
 
 describe('Connection', () => {
   test('should configure dsn when connection is set', () => {

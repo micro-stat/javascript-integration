@@ -1,7 +1,7 @@
+import Connection from './connection';
 import Counter from './counter';
-import Timer from './timer';
 
 export {
-  Counter,
-  Timer
+  Connection,
+  Counter
 }
