@@ -17,7 +17,9 @@ Connection.connect("YOUR_DSN");
 ```
 import { Counter } from 'micro-stat';
 
-Counter.increment();
+const myCounter = new Counter('Count Page Hits');
 
-Counter.publish();
+myCounter.increment();
+
+myCounter.publish();
 ```
