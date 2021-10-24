@@ -1,4 +1,5 @@
-import connection from './connection';
+import axios from 'axios';
+import Connection from './connection';
 
 class Publisher {
   constructor(name = 'Unnamed Statistic') {
@@ -6,7 +7,20 @@ class Publisher {
   }
 
   publish(value) {
-    return `${this.name} = ${value} / ${connection.dsn}`;
+    if (!Connection.dsn) {
+      throw new Error('Please configure a dsn before attempting to publish');
+    }
+
+    // const postUrl = `${Connection.dsn}/statistic`;
+
+    // const postData = {
+    //   name: this.name,
+    //   value: this.value
+    // };
+
+    // axios.post(postUrl, postData);
+
+    return `${this.name} = ${value} / ${Connection.dsn}`;
   }
 }
 
