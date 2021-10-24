@@ -1,7 +1,7 @@
 import Publisher from './publisher'
 
 class Counter extends Publisher {
-  constructor(name = 'Unnamed Timer', initialValue = 0) {
+  constructor(name = 'Unnamed Counter', initialValue = 0) {
     super(name)
     this.currentValue = initialValue;
   }
