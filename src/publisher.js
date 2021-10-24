@@ -2,8 +2,9 @@ import axios from 'axios';
 import Connection from './connection';
 
 class Publisher {
-  constructor(name = 'Unnamed Statistic') {
+  constructor(name = 'Unnamed', type = 'Counter') {
     this.name = name;
+    this.type = type
   }
 
   publish(value) {
@@ -15,6 +16,7 @@ class Publisher {
 
     // const postData = {
     //   name: this.name,
+    //   type: this.type,
     //   value: this.value
     // };
 
