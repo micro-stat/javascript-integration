@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.8",
+    "axios-mock-adapter": "^1.20.0",
     "babel-jest": "^27.3.1",
     "core-js": "3.6.5",
     "eslint": "7.32.0",

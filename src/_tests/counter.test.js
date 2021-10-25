@@ -1,3 +1,7 @@
+var axios = require("axios");
+var MockAdapter = require("axios-mock-adapter");
+
+import Connection from '../connection';
 import Counter from '../counter';
 
 describe('counter', () => {
@@ -54,5 +58,20 @@ describe('counter', () => {
     expect(() => {
       counter.value = "Hello World"
     }).toThrow('Provided value is not a number');
+  });
+
+  test('can not set non numerical values', () => {
+    // Arrange
+    const counter = new Counter('Test', 10);
+    Connection.connect('test');
+
+    var mock = new MockAdapter(axios);
+
+    mock.onPost("test/statistic").reply(201, null);
+
+    const result = counter.publish();
+
+    // Act & Assert
+    expect(result).toBe('Test = 10 / test');
   });
 })

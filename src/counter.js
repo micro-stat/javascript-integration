@@ -2,7 +2,7 @@ import Publisher from './publisher'
 
 class Counter extends Publisher {
   constructor(name = 'Unnamed Counter', initialValue = 0) {
-    super(name, typeof(Counter))
+    super(name, 'Counter')
     this.currentValue = initialValue;
   }
 

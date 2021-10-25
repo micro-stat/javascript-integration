@@ -1,3 +1,6 @@
+var axios = require("axios");
+var MockAdapter = require("axios-mock-adapter");
+
 import Connection from '../connection';
 import Publisher from '../publisher';
 
@@ -14,9 +17,13 @@ test('should expose publish method', () => {
   const expectedValue = "Test Statistic = 10 / test";
   Connection.connect('test')
 
+  var mock = new MockAdapter(axios);
+
+  mock.onPost("test/statistic").reply(201, null);
+
   // Act
-  const publisher = new Publisher("Test Statistic");
+  const publisher = new Publisher("Test Statistic", "Test", 10);
 
   // Assert
-  expect(publisher.publish(10)).toEqual(expectedValue);
+  expect(publisher.publish()).toEqual(expectedValue);
 });
