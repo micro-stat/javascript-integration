@@ -13,7 +13,7 @@ class Publisher {
       throw new Error('Please configure a dsn before attempting to publish');
     }
 
-    const postUrl = `${Connection.dsn}/statistic`;
+    const postUrl = `${Connection.dsn}`;
 
     const postData = {
       name: this.name,
@@ -22,8 +22,6 @@ class Publisher {
     };
 
     axios.post(postUrl, postData);
-
-    return `${this.name} = ${this.value} / ${Connection.dsn}`;
   }
 }
 

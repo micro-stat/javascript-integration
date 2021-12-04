@@ -1,6 +1,6 @@
 {
   "name": "micro-stat",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "dist/micro-stat.umd.js",
   "module": "dist/micro-stat.es.js",
   "source": "src/index.js",
@@ -16,7 +16,8 @@
     "dev": "vite",
     "build": "vite build",
     "test": "jest",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "yalc": "yarn build && yalc publish"
   },
   "devDependencies": {
     "@babel/preset-env": "7.15.8",
