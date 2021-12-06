@@ -5,7 +5,6 @@ class Publisher {
   constructor(name = 'Unnamed', type = 'Counter', value = 0) {
     this.name = name;
     this.type = type
-    this.value = value
   }
 
   publish() {
