@@ -7,6 +7,7 @@ import {
 } from 'web-vitals';
 
 import Counter from './counter';
+import Timer from './timer';
 
 export default () => {
   const reportVital = ({
@@ -15,12 +16,12 @@ export default () => {
   }) => {
     switch (name) {
       case 'LCP':
-        const largestContentfulPaint = new Counter('Largest Contentful Paint')
+        const largestContentfulPaint = new Timer('Largest Contentful Paint')
         largestContentfulPaint.value = value
         largestContentfulPaint.publish()
         break
       case 'FID':
-        const firstInputDelay = new Counter('First Input Delay')
+        const firstInputDelay = new Timer('First Input Delay')
         firstInputDelay.value = value
         firstInputDelay.publish()
         break
@@ -30,12 +31,12 @@ export default () => {
         layoutShift.publish()
         break
       case 'TTFB':
-        const firstByte = new Counter('Time to First Byte')
+        const firstByte = new Timer('Time to First Byte')
         firstByte.value = value
         firstByte.publish()
         break
       case 'FCP':
-        const firstPaint = new Counter('First Contentful Paint')
+        const firstPaint = new Timer('First Contentful Paint')
         firstPaint.value = value
         firstPaint.publish()
         break
