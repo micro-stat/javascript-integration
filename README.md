@@ -23,3 +23,6 @@ myCounter.increment();
 
 myCounter.publish();
 ```
+
+## Web Vitals
+- Web vitals are automatically recorded when using this integration package
