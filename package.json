@@ -1,6 +1,6 @@
 {
   "name": "micro-stat",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "dist/micro-stat.umd.js",
   "module": "dist/micro-stat.es.js",
   "source": "src/index.js",

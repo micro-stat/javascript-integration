@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Connection from './connection';
 
 class Publisher {
@@ -19,6 +18,8 @@ class Publisher {
       type: this.type,
       value: this.value
     };
+
+    const axios = require('axios');
 
     axios.post(postUrl, postData);
   }
