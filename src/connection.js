@@ -1,11 +1,12 @@
-import loadVitals from './vitals';
-
 export default {
   dsn: null,
 
-  connect(dsn) {
+  async connect(dsn) {
     this.dsn = dsn;
 
-    loadVitals();
+    if (typeof window !== 'undefined') {
+      const loadVitals = await import('./vitals');
+      loadVitals.default();
+    }
   }
 }

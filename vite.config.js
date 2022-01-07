@@ -7,6 +7,11 @@ export default {
             entry: path.resolve(__dirname, 'src/index.js'),
             name: 'micro-stat'
         },
-        sourcemap: true
+        sourcemap: true,
+        rollupOptions: {
+            output: {
+            inlineDynamicImports: true
+            },
+        }
     }
 };
