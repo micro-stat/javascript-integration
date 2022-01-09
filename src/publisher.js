@@ -11,17 +11,13 @@ class Publisher {
       throw new Error('Please configure a dsn before attempting to publish');
     }
 
-    const postUrl = `${Connection.dsn}`;
-
-    const postData = {
+    const metricPayload = {
       name: this.name,
       type: this.type,
       value: this.value
     };
 
-    const axios = require('axios');
-
-    axios.post(postUrl, postData);
+    Connection.publish(metricPayload)
   }
 }
 
