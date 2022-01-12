@@ -1,4 +1,5 @@
-# micro-stat
+# micro-stat - javascript-integration
+- This integration is designed for javascript based applications, like your modern SPA or Node API
 
 ## Usage
 - Add this package via NPM or yarn
