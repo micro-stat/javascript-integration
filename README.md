@@ -2,19 +2,22 @@
 - This integration is designed for javascript based applications, like your modern SPA or Node API
 
 ## Usage
-- Add this package via NPM or yarn
+> If you have an account with micro stat, try out our tutorial - https://www.portal.micro-stat.com/tutorial
+
+### Instructions
+1. Install the integration into your app with npm or yarn
 
 ```
 yarn add micro-stat
 ```
-- Open a connection
+2. Open a connection
 ```
 import { Connection } from 'micro-stat';
 
 Connection.connect("YOUR_DSN");
 ```
 
-- Create a counter
+3. Publish a new metric
 ```
 import { Counter } from 'micro-stat';
 
