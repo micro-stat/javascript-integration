@@ -18,7 +18,7 @@ export default {
       const transmissionDelay = setTimeout(() => {
         if (this.queue.length > 0) {
           const axios = require('axios');
-          axios.post(`${this.dsn}`, this.queue);
+          axios.post(`https://api.micro-stat.com/api/ingest?dsn=${this.dsn}`, this.queue);
           this.queue = []
         }   
       }, 1000);
