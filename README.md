@@ -1,32 +1,53 @@
-# micro-stat - javascript-integration
-- This integration is designed for javascript based applications, like your modern SPA or Node API
+# micro-stat :: JavaScript SDK
+- This integration is designed for NodeJS and javascript applications
+- Please make sure to register an account to get your unique DSN (Data source name)
+- Learn more at https://www.help.micro-stat.com
 
-## Usage
-> If you have an account with micro stat, try out our tutorial - https://www.portal.micro-stat.com/tutorial
-
-### Instructions
-1. Install the integration into your app with npm or yarn
+## Steps
+1. Install the integration in your app with npm or yarn
 
 ```
 yarn add micro-stat
 ```
-2. Open a connection
+2. Configure your connection (You must do this before publishing metrics)
 ```
 import { Connection } from 'micro-stat';
 
 Connection.connect("YOUR_DSN");
 ```
 
-3. Publish a new metric
+3. Publish your first metric
 ```
 import { Counter } from 'micro-stat';
 
-const myCounter = new Counter('Count Page Hits');
+const myFirstCounter = new Counter('Count Page Hits');
 
-myCounter.increment();
+myFirstCounter.increment();
 
-myCounter.publish();
+myFirstCounter.publish();
 ```
 
-## Web Vitals
-- Web vitals are automatically recorded when using this integration package
+4. Alternatively use short hand syntax
+```
+import { HitCounter } from 'micro-stat';
+
+new HitCounter('Website Visited').publish();
+```
+
+5. Optionally customise your experience by providing options when connecting
+```
+import { Connection } from 'micro-stat';
+
+const options = {
+  captureWebVitals: false,
+  disablePublication: true
+}
+
+Connection.connect("YOUR_DSN", options);
+```
+
+## Supported Options
+Option | Default | Description
+| ----------- | ----------- | ----------- |
+captureWebVitals | true | When `true` - web vitals are automatically collected and published
+disablePublication | false | When `true` - metrics are only output to the console, not published to micro-stat
