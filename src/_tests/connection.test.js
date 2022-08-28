@@ -15,7 +15,8 @@ describe('Connection', () => {
   test('should use default options when no options provided', () => {
     // Arrange
     const expected_options = {
-      captureWebVitals: true
+      captureWebVitals: true,
+      disablePublication: false
     };
 
     // Act
@@ -28,12 +29,14 @@ describe('Connection', () => {
   test('should override default options when options are provided', () => {
     // Arrange
     const expected_options = {
-      captureWebVitals: false
+      captureWebVitals: false,
+      disablePublication: true
     };
 
     // Act
     Connection.connect('TEST_DSN', {
-      captureWebVitals: false
+      captureWebVitals: false,
+      disablePublication: true
     });
 
     // Assert

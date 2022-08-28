@@ -10,6 +10,12 @@ class Publisher {
     if (!Connection.dsn) {
       throw new Error('Please configure a dsn before attempting to publish');
     }
+    
+    // Prevent publishing metrics when configured to do so
+    if (Connection.options.disablePublication) {
+      console.info(`micro-stat :: ${this.name} :: ${this.type}`, this.value)
+      return
+    }
 
     const metricPayload = {
       name: this.name,

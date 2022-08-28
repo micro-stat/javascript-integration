@@ -1,5 +1,6 @@
 const defaultOptions = {
-  captureWebVitals: true
+  captureWebVitals: true,
+  disablePublication: false
 };
 
 export default defaultOptions;
